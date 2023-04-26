@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.generic import CreateView
 
-# Create your views here.
+class HomeView(CreateView):
+    template_name = 'courses/home.html'
