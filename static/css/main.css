@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b8acac;
+    background-color: #636263;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
   }
@@ -27,7 +27,7 @@
   }
   
   .navbar-menu a {
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
@@ -75,7 +75,7 @@
   
   .navbar-auth a {
     margin-left: 20px;
-    color: #333;
+    color: #fafafa;
     text-decoration: none;
   }
   
@@ -223,7 +223,7 @@
   }
   /* footer */
   footer {
-    background-color: #333;
+    background-color: #636263;
     color: #fff;
     padding: 50px 0;
   }
@@ -317,4 +317,74 @@
     margin: 0;
     color: #fff;
     font-size: 16px;
+  }
+
+  /* courses.html */
+  .container {
+    margin-top: 50px;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 0;
+    height: 400px; /* set a fixed height for the card */
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card-img-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  /* Default course cover image */
+  .card-img-top[src$='default-course-cover.jpg'] {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #a7a7a7;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-footer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #f7f7f7;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 0.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  /* Make all cards the same height */
+  .card-body {
+    height: 150px; /* set a fixed height for the card body */
+    overflow: hidden; /* add overflow:hidden to hide any content overflowing beyond the height */
+  }
+  .card a {
+    text-decoration: none;
+    color: inherit;
   }

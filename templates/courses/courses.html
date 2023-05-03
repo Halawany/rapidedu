@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      {% for course in courses %}
+        <div class="col-md-4 mb-4"><a href="{% url 'course_detail' course.pk %}">
+          <div class="card">
+            {% if course.cover %}
+              <img class="card-img-top" src="{{ course.cover.url }}" alt="{{ course.name }}">
+            {% else %}
+              <img class="card-img-top" src="{% static 'images/rapidedu-default-img.jpg' %}" alt="RapidEdu">
+            {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ course.name }}</h5>
+              <p class="card-text">{{ course.description }}</p>
+            </div>
+            <div class="card-footer text-muted">
+              {{ course.category }}
+            </div>
+        </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
