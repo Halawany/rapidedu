@@ -1,5 +1,104 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}
+    {{ course.name }}
+{% endblock %}
 {% block content%}
-    
+<div class="container my-4">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="course-title">{{ course.name }}</h1>
+        <p class="course-description">{{ course.description }}</p>
+      </div>
+      <div class="col-md-5">
+        <img src="{{ course.cover.url }}" alt="{{ course.name }}" class="img-fluid course-cover">
+      </div>
+    </div>
+  </div>
+  <div class="info-container">
+  <div class="course-info-section">
+    <div class="course-duration-section">
+      <div class="course-info-item">
+        <i class="far fa-clock"></i>
+        <span class="course-duration">3-5 weeks</span>
+      </div>
+    </div>
+    <div class="course-pace-section">
+      <div class="course-info-item">
+        <i class="fas fa-user"></i>
+        <span class="course-pace">Progress at your own speed</span>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="course-container">
+    <div class="course-card">
+      <div class="course-card-heading">
+        <h2>Course Name</h2>
+        <span class="course-card-date">Today's Date - 5 Weeks</span>
+      </div>
+      <div class="course-card-body">
+        <p>This course will cover various topics and will help you learn important skills that you can apply in your career.</p>
+        <ul>
+          <li>Topic 1</li>
+          <li>Topic 2</li>
+          <li>Topic 3</li>
+        </ul>
+      </div>
+      <div class="course-card-footer">
+        <a href="#" class="enroll-button">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+  <!-- page sticky navbar -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#what-you-learn-section">What You'll Learn</a></li>
+            <li><a href="#instructors-section">Meet Our Instructors</a></li>
+            <li><a href="#faq-section">FAQ</a></li>
+          </ul>
+        </nav>
+      
+        <section id="about-section" class="main-section">
+          <h2>About</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit enim id metus lacinia, vel feugiat nisi eleifend. Donec euismod risus vel neque tincidunt, id bibendum ex euismod. </p>
+        </section>
+      
+        <section id="what-you-learn-section" class="main-section">
+          <h2>What You'll Learn</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit enim id metus lacinia, vel feugiat nisi eleifend. Donec euismod risus vel neque tincidunt, id bibendum ex euismod. </p>
+        </section>
+      
+        <section id="instructors-section" class="main-section">
+            <h2>Meet Our Instructors</h2>
+            <div class="instructors-grid">
+              <div class="instructor-card">
+                <img src="https://via.placeholder.com/150" alt="Instructor Name" class="instructor-image">
+                <div class="instructor-info">
+                  <h3 class="instructor-name">Instructor Name</h3>
+                  <p class="instructor-job">Job Title</p>
+                </div>
+              </div>
+              <div class="instructor-card">
+                <img src="https://via.placeholder.com/150" alt="Instructor Name" class="instructor-image">
+                <div class="instructor-info">
+                  <h3 class="instructor-name">Instructor Name</h3>
+                  <p class="instructor-job">Job Title</p>
+                </div>
+              </div>
+              <!-- add more instructor cards here -->
+            </div>
+          </section>
+              <!-- add more instructor cards here -->
+            </div>
+          </section>
+      
+        <section id="faq-section" class="main-section">
+          <h2>FAQ</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit enim id metus lacinia, vel feugiat nisi eleifend. Donec euismod risus vel neque tincidunt, id bibendum ex euismod. </p>
+        </section>
+      
+</div>
+  </body>
 {% endblock %}

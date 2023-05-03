@@ -388,3 +388,263 @@
     text-decoration: none;
     color: inherit;
   }
+
+/* course detail layout */
+.info-container {
+  width: 85%;
+  background-color: yellow;
+
+}
+.course-info-section {
+  background-color: #dee0e0;
+  color: #000;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 99%;
+}
+
+.course-duration-section {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.course-duration-section .course-info-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.course-duration-section .course-info-item i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.course-duration-section .course-info-item .course-duration {
+  font-size: 1.2rem;
+}
+
+.course-pace-section {
+  display: flex;
+  align-items: center;
+}
+
+.course-pace-section .course-info-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.course-pace-section .course-info-item i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.course-pace-section .course-info-item .course-pace {
+  font-size: 1.2rem;
+  margin-right: 15rem;
+}
+
+.course-pace-section .course-info-item .progress-text {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.progress-section i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.course-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  margin-bottom: 2.5rem;
+}
+
+.course-card {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  width: 400px;
+  height: 500px;
+  margin-top:1px;
+
+}
+
+.course-card-heading {
+  background-color: #636263;
+  color: #fff;
+  padding: 1rem;
+}
+
+.course-card-heading h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.course-card-date {
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.course-card-body {
+  padding: 1rem;
+}
+
+.course-card-body p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.course-card-body ul {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.course-card-body li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.course-card-footer {
+  background-color: #f44336;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.enroll-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.enroll-button:hover {
+  background-color: #fff;
+  color: #f44336;
+}
+
+/* Style for the main navigation */
+.main-nav {
+  position: sticky;
+  top: 0;
+  background-color: #1d6e74;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  z-index: 1;
+  height: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.main-nav li {
+  margin-right: 1rem;
+}
+
+.main-nav li:last-child {
+  margin-right: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav a:hover {
+  color: #333333;
+}
+
+/* Style for the main sections */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: justify;
+  font-size: 70px;
+  align-items: justify;
+  height: calc(100vh - 4rem);
+  margin-right: 10rem;
+  margin-left: 10rem;
+}
+
+.main-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-section p {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+/* Style for the instructor cards */
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.instructor-card {
+  display: flex;
+  background-color: #09666d;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.instructor-image {
+  display: block;
+  margin: 15px;
+  width: 70%;
+  height: 150;
+  object-fit: cover;
+  border-radius: 70%;
+}
+
+.instructor-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.instructor-name {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.instructor-job {
+  margin: 0;
+  color: #999;
+}
