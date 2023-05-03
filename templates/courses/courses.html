@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
       {% for course in courses %}
-        <div class="col-md-4 mb-4"><a href="{% url 'course_detail' course.pk %}">
+        <div class="col-md-4 mb-4"><a href="{% url 'course_detail' course.slug %}">
           <div class="card">
             {% if course.cover %}
               <img class="card-img-top" src="{{ course.cover.url }}" alt="{{ course.name }}">

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils.text import slugify
 
 class Category(models.Model):
 
@@ -33,6 +34,7 @@ class Course(models.Model):
     instructors = models.ManyToManyField(Instructor)
     description = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=600, unique=True, blank=True)
     cover = models.ImageField(upload_to="images/cover/")
 
     class Meta:
@@ -44,6 +46,11 @@ class Course(models.Model):
 
     def get_absolute_url(self):
         return reverse(kwargs={"pk": self.pk})
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 class Enrollment(models.Model):
     
