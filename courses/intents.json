@@ -1,0 +1,113 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "Courses",
+      "patterns": [
+        "Which Courses do you have?",
+        "What kinds of courses are there?",
+        "What do you sell?"
+      ],
+      "responses": [
+        "We are a courses platform, we have have courses in Computer science, marketing, PR, Graphic"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal"
+      ]
+    },
+    {
+      "tag": "general information",
+      "patterns": [
+        "How many courses can i enroll in?",
+        "Can i unenroll from a course?",
+        "Will i receive a certificate after completion?"
+
+      ],
+      "responses": [
+        "For general information answers you can visit our FAQ page http://www.127.0.0.1:8000/faq"
+      ]
+    },
+    {
+      "tag": "prices",
+      "patterns":[
+        "How much for a course?"
+      ],
+      "responses": [
+        "Usually a course starts at 9.99$"
+      ]
+    },
+    {
+      "tag": "Contact",
+      "patterns":[
+        "How can i contact sales team?",
+        "How can i contact the website admin?",
+        "Is there any telephone number or e-mail to contact support?"
+      ],
+      "responses": [
+        "You can contact the support team through support@site.com, or contact the website admin through admin@site.com"
+      ]
+    },
+    {
+      "tag": "Financial aid",
+      "patterns":[
+        "Do you accept financial aid?"
+      ],
+      "responses": [
+        "Yes, we provide financial aid, you need to fill this form with information about you then our sales team will contact you"
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}
+

@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 django = "*"
 pillow = "*"
+torch = "*"
+torchvision = "*"
+numpy = "*"
+nltk = "*"
+pyspellchecker = "*"
 
 [dev-packages]
 

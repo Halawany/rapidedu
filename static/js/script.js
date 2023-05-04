@@ -11,3 +11,6 @@ navLinks.forEach(link => {
     window.history.pushState(null, null, targetId);
   });
 });
+
+// user authentication
+

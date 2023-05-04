@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-7Zkzwp33E+2+DJ5Z4dCQz2t3d0Zy6qM1zYgBq6U5oZvPzjRQGq0q6KqkI4ZTjD4XqE7+Cf2m2YJc5wBt5zGJ+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
         <nav class="navbar">
@@ -28,10 +29,17 @@
                 <button type="submit"> Search <i class="fa fa-search"></i></button>
               </form>
             </div>
+            {% if user.is_authenticated %}
             <div class="navbar-auth">
-              <a href="#">Sign In</a>
-              <a class="register" href="#">Register for free</a>
+              <p class="fas fa-user-circle">{{ user.username }}</p>
+              <a href="{% url 'logout' %}" class="register">Logout</a>
             </div>
+            {% else %}
+            <div class="navbar-auth">
+              <a href="{% url 'login' %}">Sign In</a>
+              <a href="{% url 'signup' %}" class="register">Register for free</a>
+            </div>
+            {% endif %}
           </nav>
       {% block content %}
       {% endblock %}
