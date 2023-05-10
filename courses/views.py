@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.http import JsonResponse
-# from .chat import get_response
+from .chatbot.chat import get_response
 
 from .models import Course
 
@@ -19,11 +19,13 @@ class CourseDetailView(DetailView):
     template_name = 'courses/course_detail.html'
 
 
-# def predict(request):
-#     if request.method == 'POST':
-#         text = request.POST.get('message')
-#         response = get_response(text)
-#         message = {"answer": response}
-#         return JsonResponse(message)
-#     else:
-#         return JsonResponse({'error': 'Invalid request method'})
+def chatbot(request):
+    if request.method == 'POST':
+        message = request.POST.get('message', '')
+        response = get_response(message)
+        data = {
+            'response': response
+        }
+        return JsonResponse(data)
+    else:
+        return render(request, 'courses/chatbot.html')

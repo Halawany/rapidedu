@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    chatbot
+{% endblock %}
+{% block content%}
+{% comment %} <div id="chatbot-icon">
+  <img src="{% static 'images/chatbox-icon.svg' %}" alt="Chatbot">
+</div>
+<div id="chat-window">
+  <div class="chat-container">
+      <div class="chat-message">
+          <strong>Chatbot:</strong> Hello! How can I help you today?
+      </div>
+  </div>
+  <div class="form-group">
+      <input type="text" class="form-control" id="message-input" placeholder="Type your message...">
+  </div>
+  <button type="button" class="btn btn-primary" id="send-button">Send</button>
+</div>
+<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}"> {% endcomment %}
+{% endblock %}
