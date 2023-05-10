@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
     path('courses', views.CoursesListView.as_view(), name='courses'),
     path('course/<slug:slug>', views.CourseDetailView.as_view(), name='course_detail'),
-    # path('predict/', views.predict, name='predict'),
+    path('chatbot/', views.chatbot, name='chatbot'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

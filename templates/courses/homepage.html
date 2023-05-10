@@ -146,4 +146,48 @@
       </div>
     </div>
   </section>
+  <!-- Add the HTML code for the chat icon -->
+  <div id="chatbot-icon">
+    <img src="{% static 'images/chatbox-icon.svg' %}" alt="Chatbot Icon">
+</div>
+<!-- Add the HTML code for the message element -->
+<div id="message">
+  <span>Hello! Want fast help?, click the icon below</span>
+</div>
+<!-- Add the HTML code for the chat window -->
+<div id="chat-window">
+    <div class="chat-header">
+      <div class="avatar-container">
+        <img src="{% static 'images/chatbox-icon.svg' %}" alt="Chatbot Avatar" class="avatar">
+    </div>
+        <div class="name-container">
+            <span class="name">Chatbot</span>
+            <img src="{% static 'images/online.jpg' %}" alt="Online" class="status">
+          </div>
+        <button type="button" class="close-button" onclick="closeChatWindow()">&times;</button>
+    </div>
+    <div class="chat-container">
+        <div class="chat-message bot-message">
+            <div class="avatar-container">
+                <img src="{% static 'images/chatbox-icon.svg' %}" alt="Chatbot Avatar" class="avatar">
+            </div>
+            <div class="message-container">
+                <div class="message-text">
+                    <span class="text">Hello!, do you have an question about our courses or prices let me know</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="input-container">
+        <div class="avatar-container">
+            <img src="{% static 'images/chatbox-icon.svg' %}" alt="User Avatar" class="avatar">
+        </div>
+        <div class="message-container">
+            <input type="text" class="form-control" id="message-input" placeholder="Type your message...">
+        </div>
+        <button type="button" class="send-button" id="send-button"><i class="fa fa-paper-plane"></i></button>
+    </div>
+</div>
+
+  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 {%endblock%}
