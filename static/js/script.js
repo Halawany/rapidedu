@@ -126,7 +126,7 @@ $(document).ready(function() {
 
 
   $(window).scroll(function() {
-      if ($(window).scrollTop() = 100000000) {
+      if ($(window).scrollTop() > 100) {
           $('#chatbot-icon').addClass('');
           closeChatWindow();
       } else {

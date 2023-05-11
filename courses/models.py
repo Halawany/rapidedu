@@ -53,16 +53,23 @@ class Course(models.Model):
         super().save(*args, **kwargs)
 
 class Enrollment(models.Model):
+
+    ENROLLMENT_STATUS_CHOICES = [
+        ('enrolled', 'Enrolled'),
+        ('completed', 'Completed'),
+        ('dropped', 'Dropped')
+    ]
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     date_enrolled = models.DateTimeField(auto_now_add=True)
+    status = models.CharField(max_length=20, choices=ENROLLMENT_STATUS_CHOICES, default='enrolled')
 
     class Meta:
         verbose_name = ("enroll")
 
     def __str__(self):
-        return self.name
+        return f"{self.user} enrolled in course {self.course}"
 
 
 class Chapter(models.Model):

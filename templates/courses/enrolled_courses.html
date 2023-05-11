@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+Courses Enrolled in
+{% endblock%}
+{% block content %}
+  <h1 style="text-align: center; margin-top:10px; color:red;">Courses Enrolled in</h1>
+  {% if enrollments %}
+  <div class="container">
+    <div class="row">
+      {% for enrollment in enrollments %}
+        <div class="col-md-4 mb-4">
+          <a href="{% url 'course_detail' enrollment.course.slug %}">
+            <div class="card">
+              {% if enrollment.course.cover %}
+                <img class="card-img-top" src="{{ enrollment.course.cover.url }}" alt="{{ enrollment.course.name }}">
+              {% else %}
+                <img class="card-img-top" src="{% static 'images/rapidedu-default-img.jpg' %}" alt="RapidEdu">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ enrollment.course.name }}</h5>
+                <p class="card-text">{{ enrollment.course.description }}</p>
+              </div>
+              <div class="card-footer text-muted">
+                {{ enrollment.course.category }}
+              </div>
+              <div class="card-button">
+                <a href="{% url 'classroom' enrollment.course.slug %}" class="btn btn-primary">Go to Classroom</a>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% else %}
+    <p>You haven't enrolled in any courses yet.</p>
+  {% endif %}
+{% endblock %}
+

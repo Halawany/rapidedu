@@ -1041,3 +1041,93 @@
   z-index: 9999;
   display: none;
 }
+
+/* courses enrollment */
+
+.enrolled-course-card:hover {
+  filter: blur(2px);
+}
+.enrolled-course-card:hover .enrolled-course-card-button {
+  display: block;
+}
+.enrolled-course-card-button {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+}
+
+/* classroom style */
+
+/* Navigation Bar */
+.classroom-navbar {
+  margin-top: 20px;
+  border-radius: 0;
+  height: 100%;
+  background-color: #121414;
+}
+
+.classroom-navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  height: 100%;
+
+}
+
+.classroom-nav-link {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+}
+
+.classroom-nav-link:hover {
+  background-color: #f8f9fa;
+}
+
+.classroom-navbar-toggler {
+  border-color: #ddd;
+}
+
+/* Chapter Content */
+.classroom-chapter-container {
+  margin-top: 40px;
+}
+
+.classroom-chapter-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.classroom-chapter-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.classroom-video-player-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.classroom-video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  border-radius: 10px;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  background-color: #303e4b;
+  padding: 10px;
+  border-radius: 5px;
+  height: 100%;
+
+}

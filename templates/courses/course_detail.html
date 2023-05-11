@@ -46,8 +46,15 @@
         </ul>
       </div>
       <div class="course-card-footer">
-        <a href="#" class="enroll-button">Enroll Now</a>
-      </div>
+        {% if enrolled %}
+            <a href="{% url 'classroom' course.pk %}" class="classroom-button">Classroom</a>
+        {% else %}
+            <form method="post" action="{% url 'enroll' course.pk %}">
+                {% csrf_token %}
+                <button type="submit" class="enroll-button">Enroll Now</button>
+            </form>
+        {% endif %}
+    </div>
     </div>
   </div>
   <!-- page sticky navbar -->
