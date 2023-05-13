@@ -1063,71 +1063,92 @@
 
 /* classroom style */
 
-/* Navigation Bar */
+/* Add CSS styles for the site header */
+header {
+	background-color: #333;
+	color: white;
+	height: 80px;
+	position: relative;
+	z-index: 2; /* Set a higher z-index than the navigation bar and video container */
+}
+
+.site-header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	padding: 0 20px;
+}
+
+.site-header-content h1 {
+	margin: 0;
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+header nav a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+/* Add CSS styles for the navigation bar */
 .classroom-navbar {
-  margin-top: 20px;
-  border-radius: 0;
-  height: 100%;
-  background-color: #121414;
+	background-color: #f2f2f2;
+	height: 60px;
+	position: relative;
+	z-index: 1; /* Set a lower z-index than the header and footer */
+  padding-top: 15px;
 }
 
-.classroom-navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
-  height: 100%;
-
+.classroom-navbar ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
 }
 
-.classroom-nav-link {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  padding: 8px 16px;
+/* Add CSS styles for the active chapter */
+.classroom-navbar a.active {
+	background-color: #4CAF50;
+	color: white;
 }
 
-.classroom-nav-link:hover {
-  background-color: #f8f9fa;
+/* Add CSS styles for the chapter links */
+.classroom-navbar a {
+	margin: 0;
+	padding: 10px;
+	text-decoration: none;
+	color: black;
 }
 
-.classroom-navbar-toggler {
-  border-color: #ddd;
+/* Add CSS styles for the video container */
+.classroom-video-container {
+	margin-top: 60px;
+  margin-bottom: 10px;
+	position: relative;
+	z-index: 0; /* Set a lower z-index than the header and navigation bar */
 }
 
-/* Chapter Content */
-.classroom-chapter-container {
-  margin-top: 40px;
+/* Add CSS styles for the video player */
+#classroom-video-player {
+	display: block;
+	margin: 0 auto;
+	width: 80%;
+	max-width: 800px;
 }
 
-.classroom-chapter-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+/* Add CSS styles for the site footer */
+footer {
+	background-color: #333;
+	color: white;
+	padding: 10px;
+	position: relative;
+	z-index: 2; /* Set a higher z-index than the navigation bar and video container */
 }
 
-.classroom-chapter-container p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.classroom-video-player-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.classroom-video-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 75%;
-  border-radius: 10px;
-}
-
-.navbar.navbar-expand-lg.navbar-light.bg-light {
-  background-color: #303e4b;
-  padding: 10px;
-  border-radius: 5px;
-  height: 100%;
-
-}

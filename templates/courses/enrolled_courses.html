@@ -23,9 +23,7 @@ Courses Enrolled in
               </div>
               <div class="card-footer text-muted">
                 {{ enrollment.course.category }}
-              </div>
-              <div class="card-button">
-                <a href="{% url 'classroom' enrollment.course.slug %}" class="btn btn-primary">Go to Classroom</a>
+                <a href="{% url 'classroom' enrollment.course.slug %}" class="btn btn-primary float-right">Go to Classroom</a>
               </div>
             </div>
           </a>
@@ -37,4 +35,3 @@ Courses Enrolled in
     <p>You haven't enrolled in any courses yet.</p>
   {% endif %}
 {% endblock %}
-

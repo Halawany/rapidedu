@@ -88,3 +88,11 @@ class Chapter(models.Model):
 
     def get_absolute_url(self):
         return reverse(kwargs={"pk": self.pk})
+
+class FrequentlyAskedQuestion(models.Model):
+    question = models.CharField(max_length=600)
+    answer = models.TextField()
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.question

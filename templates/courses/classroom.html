@@ -1,43 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title%}
+Classroom
+{% endblock %}
 {% block content %}
-  <div class="row">
-    <div class="col-md-3">
-      {% if chapters %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light flex-column">
-          <a class="navbar-brand" href="#">Chapters</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav flex-column">
-              {% for chapter in chapters %}
-                <li class="nav-item">
-                  <a class="nav-link" href="#classroom-chapter-{{ chapter.id }}">{{ chapter.name }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </nav>
-      {% endif %}
-    </div>
-    <div class="col-md-9">
-      {% if chapters %}
-        {% for chapter in chapters %}
-          <div class="classroom-chapter-container" id="classroom-chapter-{{ chapter.id }}">
-            <h2>{{ chapter.name }}</h2>
-            <p>{{ chapter.description }}</p>
-            {% if chapter.video %}
-              <div class="classroom-video-player-container">
-                <video controls class="classroom-video-player">
-                  <source src="{{ chapter.video.url }}" type="{{ chapter.video.content_type }}">
-                </video>
-              </div>
-            {% endif %}
-          </div>
-        {% endfor %}
-      {% endif %}
-    </div>
-  </div>
+<!-- Add the navigation bar -->
+<div class="classroom-navbar">
+  {% for chapter in chapters %}
+  <a href="#" class="classroom-chapter-link{% if forloop.first %} active{% endif %}" data-video="{{ chapter.video.url }}">{{ chapter.name }}</a>
+  {% endfor %}
+</div>
+
+<!-- Add the video player -->
+<div class="classroom-video-container">
+  <video id="classroom-video-player" controls>
+    {% if chapters %}
+    <source src="{{ chapters.0.video.url }}" type="video/mp4">
+    {% endif %}
+  </video>
+</div>
 {% endblock %}

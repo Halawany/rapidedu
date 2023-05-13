@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .chatbot.chat import get_response
 
-from .models import Course, Enrollment, Chapter
+from .models import Course, Enrollment, Chapter, Instructor, FrequentlyAskedQuestion
 
 class HomeView(TemplateView):
     template_name = 'courses/homepage.html'
@@ -18,12 +18,14 @@ class CoursesListView(ListView):
 
 class CourseDetailView(LoginRequiredMixin, DetailView):
     model = Course
-    template_name = 'courses/course_detail.html'
+    template_name = "courses/course_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         enrolled = Enrollment.objects.filter(user=self.request.user, course=self.object).exists()
         context['enrolled'] = enrolled
+        context['instructors'] = Instructor.objects.all()
+        context['faqs'] = FrequentlyAskedQuestion.objects.filter(course=self.object)
         return context
     
 class EnrolledCourses(LoginRequiredMixin, ListView):
@@ -47,7 +49,7 @@ def enroll(request, pk):
     course = get_object_or_404(Course, pk=pk)
     Enrollment.objects.create(user=request.user, course=course)
 
-    return redirect('course_slide', slug=course.slug)
+    return redirect('classroom', slug=course.slug)
 
 def chatbot(request):
     if request.method == 'POST':
