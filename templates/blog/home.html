@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  RapidEdu Blog
+{% endblock %}
+{% block content %}
+<main class="my-5">
+    <div class="container">
+      <section class="text-center">
+        <h4 class="mb-5"><strong>Latest posts</strong></h4>
+
+        <div class="row">
+          {% for post in posts %}
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="card">
+                {% if post.cover %}
+                  <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                    <img src="{{ post.cover.url }}" class="img-fluid" />
+                    <a href="{% url 'post_detail' post.slug %}">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                  </div>
+                {% endif %}
+                <div class="card-body">
+                  <h5 class="card-title">{{ post.title }}</h5>
+                  <p class="card-text">{{ post.excerpt }}</p>
+                  <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </main>
+{% endblock %}

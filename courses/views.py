@@ -5,6 +5,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .chatbot.chat import get_response
+from django.db.models import Q
 
 from .models import Course, Enrollment, Chapter, Instructor, FrequentlyAskedQuestion
 
@@ -50,6 +51,20 @@ def enroll(request, pk):
     Enrollment.objects.create(user=request.user, course=course)
 
     return redirect('classroom', slug=course.slug)
+
+class CourseSearchView(ListView):
+    model = Course
+    template_name = 'courses/search.html'
+    context_object_name = 'courses'
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Course.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query)
+        )
+        return object_list
+
 
 def chatbot(request):
     if request.method == 'POST':

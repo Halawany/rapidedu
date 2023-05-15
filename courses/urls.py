@@ -11,6 +11,7 @@ urlpatterns = [
     path('enroll/<int:pk>/', views.enroll, name='enroll'),
     path('enrolled/', views.EnrolledCourses.as_view(), name='enrolled_courses'),
     path('course/<slug:slug>/classroom', views.ClassroomView.as_view(), name='classroom'),
+    path('search/', views.CourseSearchView.as_view(), name='search'),
     path('chatbot/', views.chatbot, name='chatbot'),
 ]
 
