@@ -6,7 +6,7 @@ Classroom
 {% block content %}
 <!-- Add the navigation bar -->
 <div class="classroom-navbar">
-  {% for chapter in chapters %}
+  {% for chapter in course.chapter_set.all %}
   <a href="#" class="classroom-chapter-link{% if forloop.first %} active{% endif %}" data-video="{{ chapter.video.url }}">{{ chapter.name }}</a>
   {% endfor %}
 </div>
@@ -14,8 +14,8 @@ Classroom
 <!-- Add the video player -->
 <div class="classroom-video-container">
   <video id="classroom-video-player" controls>
-    {% if chapters %}
-    <source src="{{ chapters.0.video.url }}" type="video/mp4">
+    {% if course.chapter_set.all %}
+    <source src="{{ course.chapter_set.all.0.video.url }}" type="video/mp4">
     {% endif %}
   </video>
 </div>

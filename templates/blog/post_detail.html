@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-8 mx-auto">
       {% if object.cover %}
-        <img src="{{ object.cover.url }}" class="img-fluid mb-4 rounded" alt="{{ object.title }}">
+        <img style="width:100%;" src="{{ object.cover.url }}" class="img-fluid mb-4 rounded" alt="{{ object.title }}">
       {% endif %}
       <h1 class="h2 mb-4">{{ object.title }}</h1>
       <p class="mb-2"><small>By {{ object.author }} on {{ object.created_at|date:"F j, Y" }}</small></p>

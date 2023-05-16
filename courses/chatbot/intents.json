@@ -11,10 +11,7 @@
         "Good day"
       ],
       "responses": [
-        "Hey :-)",
-        "Hello, thanks for visiting",
-        "Hi there, what can I do for you?",
-        "Hi there, how can I help?"
+        "Hi there, thanks for visiting, what can I do for you?"
       ]
     },
     {
@@ -36,10 +33,11 @@
       "patterns": [
         "Which Courses do you have?",
         "What kinds of courses are there?",
+        "type of courses?",
         "What do you sell?"
       ],
       "responses": [
-        "We are a courses platform, we have have courses in Computer science, marketing, PR, Graphic"
+        "we have courses in Computer science, marketing, PR, Graphic and many more"
       ]
     },
     {
@@ -58,22 +56,32 @@
     {
       "tag": "general information",
       "patterns": [
-        "How many courses can i enroll in?",
-        "Can i unenroll from a course?",
-        "Will i receive a certificate after completion?"
+        "How many courses can i enroll in?"
 
       ],
       "responses": [
-        "For general information answers you can visit our FAQ page http://www.127.0.0.1:8000/faq"
+        "you can enroll in all courses"
+      ]
+    },
+    {
+      "tag": "general information",
+      "patterns": [
+        "Will i receive a certificate after completion?",
+        "can i get certificate after finishing the course?"
+
+      ],
+      "responses": [
+        "We don't provide certificates right now, working on them soon:)"
       ]
     },
     {
       "tag": "prices",
       "patterns":[
-        "How much for a course?"
+        "How much for a course?",
+        "How much does the course cost"
       ],
       "responses": [
-        "Usually a course starts at 9.99$"
+        "All courses right now for free"
       ]
     },
     {
@@ -84,7 +92,7 @@
         "Is there any telephone number or e-mail to contact support?"
       ],
       "responses": [
-        "You can contact the support team through support@site.com, or contact the website admin through admin@site.com"
+        "You can contact the support team through support@rapidedu.com, or contact the website admin through admin@rapidedu.com"
       ]
     },
     {
@@ -106,6 +114,108 @@
       "responses": [
         "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
         "What did the buffalo say when his son left for college? Bison."
+      ]
+    },
+    {
+      "tag": "Course inofrmation",
+      "patterns": [
+        "How can i get information about any course"
+      ],
+      "responses": [
+        "You can navigate to the courses page and choose any course you want and you will get all the informations belongs to the course."
+      ]
+    },
+    {
+      "tag": "Course inofrmation1",
+      "patterns": [
+        "all course in video or text"
+      ],
+      "responses": [
+        "right now we provide courses in viedo lectures."
+      ]
+    },
+    {
+      "tag": "registration",
+      "patterns": [
+        "How can i register to the site",
+        "Can i register to the site for free",
+        "where can i find the registration page"
+      ],
+      "responses": [
+        "You can register for free from 127.0.0.1:8000/signup"
+      ]
+    },
+    {
+      "tag": "system requirements",
+      "patterns": [
+        "What is the system requirements"
+      ],
+      "responses": [
+        "at the beginning of every course chapter the instructor will give you the required system hardware and software so you can follow along with course"
+      ]
+    },
+    {
+      "tag": "Language",
+      "patterns": [
+        "course in what language"
+      ],
+      "responses": [
+        "right now we provide courses in english language, also i'm as a chatbot only speaks english."
+      ]
+    },
+    {
+      "tag": "Time",
+      "patterns": [
+        "Is there a prefer time to take courses"
+      ],
+      "responses": [
+        "no you can take the course at any time we work 24/7."
+      ]
+    },
+    {
+      "tag": "Suggestions",
+      "patterns": [
+        "can you suggest a course for me to start with"
+      ],
+      "responses": [
+        "i were you i would like to start with cs50, use the search box at the navigation bar and type 'cs50' , thank me later."
+      ]
+    },
+    {
+      "tag": "number of course",
+      "patterns": [
+        "how many courses do you have?"
+      ],
+      "responses": [
+        "right now we have a total of 6 courses, working on many more ."
+      ]
+    },
+    {
+      "tag": "lost credentials",
+      "patterns": [
+        "i forget my password how can i change it?"
+      ],
+      "responses": [
+        "we are working on the forget password feature, you can contant the site admin from here admin@rapidedu.com."
+      ]
+    },
+    {
+      "tag": "lost credentials",
+      "patterns": [
+        "what is this website about?"
+      ],
+      "responses": [
+        "this website is about a chatbot that you can edit and use on any business, chatbots now are the first line of support to customers, customer won't wait for too long as one of your team is ready of have free time to reply to their questions you can train me on frequently asked question about you business and i will interact with the customers any number of them."
+      ]
+    },
+    {
+      "tag": "instructors",
+      "patterns": [
+        "who are your instructors, teachers?",
+        "provide information on instructors, teachers"
+      ],
+      "responses": [
+        "we have a reputable instructors from all over the world, working for institutions like Harvard, ibm, Mit, British Columbia."
       ]
     }
   ]

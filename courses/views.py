@@ -25,7 +25,7 @@ class CourseDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         enrolled = Enrollment.objects.filter(user=self.request.user, course=self.object).exists()
         context['enrolled'] = enrolled
-        context['instructors'] = Instructor.objects.all()
+        context['instructors'] = self.object.instructors.all()
         context['faqs'] = FrequentlyAskedQuestion.objects.filter(course=self.object)
         return context
     
@@ -42,9 +42,12 @@ class ClassroomView(LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['chapters'] = Chapter.objects.all()
+        course_slug = self.kwargs['slug']
+        course = Course.objects.get(slug=course_slug)
+        context['course'] = course
+        context['chapters'] = course.chapter_set.all()
         return context
-
+        
 @login_required()
 def enroll(request, pk):
     course = get_object_or_404(Course, pk=pk)

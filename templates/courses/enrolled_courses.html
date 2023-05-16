@@ -4,7 +4,7 @@
 Courses Enrolled in
 {% endblock%}
 {% block content %}
-  <h1 style="text-align: center; margin-top:10px; color:red;">Courses Enrolled in</h1>
+  <h1 style="text-align: center; margin-top:10px; color:#00000;">Courses Enrolled in</h1>
   {% if enrollments %}
   <div class="container">
     <div class="row">
@@ -32,6 +32,6 @@ Courses Enrolled in
     </div>
   </div>
   {% else %}
-    <p>You haven't enrolled in any courses yet.</p>
+    <p style="text-align=center;">You haven't enrolled in any courses yet.</p>
   {% endif %}
 {% endblock %}
